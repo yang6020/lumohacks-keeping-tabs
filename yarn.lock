@@ -4514,6 +4514,10 @@ react-native-screens@^1.0.0-alpha.10:
   version "1.0.0-alpha.10"
   resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-1.0.0-alpha.10.tgz#3e22e57592ad8050a8ebcc789d2d3da4dd5e94d9"
 
+react-native-snap-slider@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/react-native-snap-slider/-/react-native-snap-slider-0.3.0.tgz#c61bc764e64dfad1f227cfbbdb7f7f68af33b065"
+
 react-native-splash-screen@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/react-native-splash-screen/-/react-native-splash-screen-3.1.1.tgz#1a4e46c9fdce53ff52af2a2cb4181788c4e30b30"
