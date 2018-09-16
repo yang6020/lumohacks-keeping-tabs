@@ -16,15 +16,14 @@ export default class SettingsContainer extends Component {
         this.state = { text: '' }
     }
 
-    sendEmail = () => {
+    sendEmail = (data) => {
         // TODO: fetch user name here and sponsor email
-        const userName = "Barack Obama";
-        const email = "keepingtabs@mailinator.com";
+        const email = "v.chan36@gmail.com";
         const body = {
             "personalizations": [{ "to": [{ "email": email }] }],
             "from": { "email": "noreply@keepintabs.com" },
-            "subject": "Monthly Report for " + userName,
-            "content": [{ "type": "text/plain", "value": "and easy to do anywhere, even with cURL" }]
+            "subject": "Monthly Report from your Buddy ",
+            "content": [{ "type": "text/plain", "value": "Longest abstinence steak: 8 days. Drank 6/31 days of the month." }]
         };
         fetch('https://api.sendgrid.com/v3/mail/send', {
             method: 'POST',
@@ -34,6 +33,7 @@ export default class SettingsContainer extends Component {
             },
             body: JSON.stringify(body),
         }).then((response) => {
+            console.log(response);
             if (response.status === 202) {
               Alert.alert(
                   'Sent!',
@@ -61,9 +61,19 @@ export default class SettingsContainer extends Component {
         if (this.validateEmail(this.state.text)) {
             console.log("validated");
             // submit email to backend
+            Alert.alert(
+                'Sponsor Updated!',
+                'Your sponsor will now receive your monthly anonymous reports',
+                [{text:'Ok', onPress: () => console.log('Ok pressed')}]
+            );
         } else {
             console.log("invalid email");
             // alert invalid email format
+            Alert.alert(
+                'Email validation',
+                'Not a valid email. Please try again.',
+                [{text:'Ok', onPress: () => console.log('Ok pressed')}]
+            );
         }
     };
 
