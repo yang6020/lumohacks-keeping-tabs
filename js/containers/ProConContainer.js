@@ -4,14 +4,20 @@ import { Mutation, Query } from 'react-apollo';
 import { ADD_PROS, ADD_CONS, GET_PROS, GET_CONS } from '../config/queries';
 
 const addPros = ({ render }) => (
-  <Mutation mutation={ADD_PROS}>
+  <Mutation
+    mutation={ADD_PROS}
+    refetchQueries={result => [{ query: GET_PROS }]}
+  >
     {(mutation, { data, error, loading }) =>
       render({ mutation, data, error, loading })
     }
   </Mutation>
 );
 const addCons = ({ render }) => (
-  <Mutation mutation={ADD_CONS}>
+  <Mutation
+    mutation={ADD_CONS}
+    refetchQueries={result => [{ query: GET_CONS }]}
+  >
     {(mutation, { data, error, loading }) =>
       render({ mutation, data, error, loading })
     }

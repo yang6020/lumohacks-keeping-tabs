@@ -4,42 +4,13 @@ import ProConContainer from './../../containers/ProConContainer.js';
 import { Text } from 'react-native';
 import LoadingIndicator from '../../components/LoadingIndicator';
 
-// export const pros = [
-//   {
-//     id: 0,
-//     title: 'Saves money',
-//     weight: 3,
-//   },
-//   {
-//     id: 1,
-//     title: 'Better health',
-//     weight: 5,
-//   },
-//   {
-//     id: 2,
-//     title: 'Spend more time with the kids',
-//     weight: 5,
-//   },
-// ];
-
-// export const cons = [
-//   {
-//     id: 0,
-//     title: 'Feeling lonely',
-//     weight: 5,
-//   },
-//   {
-//     id: 1,
-//     title: 'Cant pass the time',
-//     weight: 5,
-//   },
-// ];
 export default class CostBenefitContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       showModal: false,
       modalToOpen: '',
+      allWeights: '',
     };
   }
 
@@ -51,6 +22,9 @@ export default class CostBenefitContainer extends Component {
     this.setState({ modalToOpen: modal });
   };
 
+  _handleState(allWeights) {
+    this.setState({ allWeights });
+  }
   static navigationOptions = {
     title: 'Cost Benefit Analysis',
   };
@@ -61,10 +35,14 @@ export default class CostBenefitContainer extends Component {
   render() {
     return (
       <ProConContainer>
+<<<<<<< HEAD
         {({ addPro, addCon, getPros, getCons, loading, error }) => {
           if (getPros.loading || getCons.loading) return <LoadingIndicator />
+=======
+        {({ addPros, addCons, getPros, getCons, loading, error }) => {
+          if (getPros.loading || getCons.loading) return <Text>Loading</Text>;
+>>>>>>> 9dee0ba489c45c671a63d550a68fafe9ab4f2209
           if (error) return <Text>Error</Text>;
-          console.log(getPros);
           pros = getPros.data.allPros;
           cons = getCons.data.allCons;
           const allProWeights = [];
@@ -91,6 +69,9 @@ export default class CostBenefitContainer extends Component {
               modalShown={this.state.showModal}
               modalToOpen={this.state.modalToOpen}
               pickModal={modal => this.pickModal(modal)}
+              addPro={addPros}
+              addCon={addCons}
+              navigation={this.props.navigation}
             />
           );
         }}
