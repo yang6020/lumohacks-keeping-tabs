@@ -21,6 +21,13 @@ const styles = StyleSheet.create({
   gridText: {
     color: 'white',
     fontWeight: 'bold'
+  },
+  inputText: {
+    paddingLeft: 10,
+    width: 200,
+    height: 30,
+    borderColor: 'gray',
+    borderWidth: 1
   }
 });
 
