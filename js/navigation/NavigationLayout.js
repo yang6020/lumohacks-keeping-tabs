@@ -72,8 +72,8 @@ export default createBottomTabNavigator(
       inactiveTintColor: "#999999",
       style: {
         backgroundColor: 'white',
-        borderTopColor: '#00ADCB',
-        borderTopWidth: 1,
+        borderTopColor: '#999999',
+        borderTopWidth: .4,
       },
     },
   }
