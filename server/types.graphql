@@ -24,3 +24,13 @@ type Day @model{
   date: String
 }
 
+type Pro @model{
+  id: ID! @isUnique
+  title: String!
+  weight: Int!
+}
+type Con @model{
+  id: ID! @isUnique
+  title: String!
+  weight: Int!
+}

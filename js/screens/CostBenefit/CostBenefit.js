@@ -110,10 +110,10 @@ const CostBenefit = ({
 
       <View style={styles.bar}>
         <View
-          style={{ backgroundColor: 'green', width: width * pw, height: 10 }}
+          style={{ backgroundColor: 'green', width: width * pw, height: height / 15, }}
         />
         <View
-          style={{ backgroundColor: 'red', width: width * cw, height: 10 }}
+          style={{ backgroundColor: 'red', width: width * cw, height: height / 15 }}
         />
       </View>
       <View style={styles.buttonContainer}>

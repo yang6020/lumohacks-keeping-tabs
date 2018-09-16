@@ -3,16 +3,16 @@ import { Text, View, } from 'react-native';
 import styles from './styles';
 import { Calendar, Agenda } from 'react-native-calendars';
 
-
-const CalendarView = ({ navigation, days, onDayPress }) => {
+const CalendarView = ({ days, onDayPress }) => {
   return (
     <View style={styles.container}>
-      <Text>Calendar</Text>
+      <View style={styles.calendar}>
         <Calendar
-            markedDates={days}
-            markingType={'period'}
-            onDayPress={onDayPress}
+          markedDates={days}
+          markingType={'period'}
+          onDayPress={onDayPress}
         />
+      </View>
     </View>
   );
 };

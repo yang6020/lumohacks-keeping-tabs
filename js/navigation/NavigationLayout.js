@@ -10,6 +10,8 @@ import Calendar from '../screens/Calendar'
 import CostBenefit from '../screens/CostBenefit'
 import Settings from '../screens/Settings'
 import Resources from '../screens/Resources'
+import DrinkModal from '../components/DrinkModal'
+
 
 export const authStack = createStackNavigator(
   {
@@ -17,13 +19,22 @@ export const authStack = createStackNavigator(
       screen: AccountForm,
     },
   },
+  {
+    headerMode: 'none',
+  }
 
 );
 const calendarStack = createStackNavigator({
   Calendar: {
     screen: Calendar,
   },
-});
+  MyModal: {
+    screen: DrinkModal
+  }
+},
+
+
+);
 const costBenefitStack = createStackNavigator({
   CostBenefit: {
     screen: CostBenefit,
@@ -69,8 +80,8 @@ export default createBottomTabNavigator(
       inactiveTintColor: "#999999",
       style: {
         backgroundColor: 'white',
-        borderTopColor: '#00ADCB',
-        borderTopWidth: 1,
+        borderTopColor: '#999999',
+        borderTopWidth: .4,
       },
     },
   }
