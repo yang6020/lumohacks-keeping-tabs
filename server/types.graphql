@@ -14,12 +14,13 @@ type Resource @model{
   id: ID! @isUnique
   title: String!
   url: String!
+  description: String!
+  imageurl: String!
 }
 
 type Day @model{
   id: ID! @isUnique
   sober: Boolean @defaultValue(value: "true")
-  createdAt: DateTime! # read-only (managed by Graphcool)
-  updatedAt: DateTime! # read-only (managed by Graphcool)
+  date: String
 }
 
