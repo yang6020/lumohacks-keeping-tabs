@@ -35,13 +35,8 @@ export default class CostBenefitContainer extends Component {
   render() {
     return (
       <ProConContainer>
-<<<<<<< HEAD
         {({ addPro, addCon, getPros, getCons, loading, error }) => {
           if (getPros.loading || getCons.loading) return <LoadingIndicator />
-=======
-        {({ addPros, addCons, getPros, getCons, loading, error }) => {
-          if (getPros.loading || getCons.loading) return <Text>Loading</Text>;
->>>>>>> 9dee0ba489c45c671a63d550a68fafe9ab4f2209
           if (error) return <Text>Error</Text>;
           pros = getPros.data.allPros;
           cons = getCons.data.allCons;
