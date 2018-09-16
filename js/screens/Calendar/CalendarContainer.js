@@ -121,9 +121,10 @@ export default class CalendarContainer extends Component {
                     }
                 `}
             >
-                {({loading, error, data}) => {
-                    if (loading) return <View
-                        style={{flex: 1, backgroundColor: 'white', justifyContent: 'center'}}><LoadingIndicator/></View>
+                {({ loading, error, data }) => {
+                    console.log(data)
+                    data= data
+                    if (loading) return <View style={{ flex: 1, backgroundColor: 'white', justifyContent: 'center' }}><LoadingIndicator /></View>
                     if (error) return <Text>Error: </Text>;
                     return <Calendar days={this.formatDates(data)} onDayPress={this.handleDayPress}/>;
                 }}

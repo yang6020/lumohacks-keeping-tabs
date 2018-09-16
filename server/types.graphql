@@ -21,7 +21,7 @@ type Resource @model{
 type Day @model{
   id: ID! @isUnique
   sober: Boolean @defaultValue(value: "true")
-  date: String
+  date: String! @isUnique
 }
 
 type Pro @model{

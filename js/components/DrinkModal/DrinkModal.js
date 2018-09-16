@@ -1,13 +1,34 @@
-import React from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
+import React from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
+import { Mutation, Query } from 'react-apollo';
+import gql from 'graphql-tag';
 import styles from './styles'
 import Icon from "react-native-vector-icons/Ionicons";
+const DrinkModal = ({ dayId, navigation }) => {
 
+  const UPDATE_DAY = gql`
+    mutation updateDay($id: ID!, $sober: Boolean) {
+      updateDay(id: $id, sober: $sober) {
+        id
+        sober
+      }
+    }
+  `;
 
-const DrinkModal = ({ navigation }) => {
-    return (
-        <View style={styles.container}>
-            <View style={styles.header}>
+  const handleClick = render => (
+    console.log('MY ID', dayId),
+    (
+      <Mutation mutation={UPDATE_DAY}>
+        {(updateDay, { data, error, loading }) =>
+          render({ updateDay, data, error, loading })
+        }
+      </Mutation>
+    )
+  );
+
+  return (
+    <View>
+                <View style={styles.header}>
                 <Icon
                     style={{ marginLeft: 10 }}
                     name="md-close"
@@ -16,23 +37,38 @@ const DrinkModal = ({ navigation }) => {
                     size={23}
                 />
             </View>
-            <View style={styles.questionContainer}>
-                <Text style={styles.question}>Did you Drink today?</Text>
-                <View style={styles.buttonContainer}>
-                    <TouchableOpacity style={styles.buttonYes}>
-                        <Text>Yes</Text>
-                    </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.buttonNo}>
-                        <Text>No</Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
-        </View>
+      <View>
+        <Text>Did you Drink today?</Text>
+        <Mutation mutation={UPDATE_DAY}>
+          {(updateDay, { data }) => (
+            <TouchableOpacity
+              onPress={() =>
+                updateDay({ variables: { id: dayId, sober: false } }).then(() =>
+                  navigation.navigate('Calendar'),
+                )
+              }
+            >
+              <Text>Yes</Text>
+            </TouchableOpacity>
+          )}
+        </Mutation>
+        <Mutation mutation={UPDATE_DAY}>
+          {(updateDay, { data }) => (
+            <TouchableOpacity
+              onPress={() =>
+                updateDay({ variables: { id: dayId, sober: true } }).then(() =>
+                  navigation.navigate('Calendar'),
+                )
+              }
+            >
+              <Text>No</Text>
+            </TouchableOpacity>
+          )}
+        </Mutation>
+      </View>
+    </View>
+  );
+};
 
-    )
-}
-
-export default DrinkModal
-
-
+export default DrinkModal;
