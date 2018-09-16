@@ -32,6 +32,22 @@ export const cons = [
   },
 ];
 export default class CostBenefitContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showModal: false,
+      modalToOpen: '',
+    };
+  }
+
+  _showModal = show => {
+    this.setState({ showModal: show });
+  };
+
+  pickModal = modal => {
+    this.setState({ modalToOpen: modal });
+  };
+
   static navigationOptions = {
     title: 'Cost Benefit Analysis',
   };
@@ -52,7 +68,16 @@ export default class CostBenefitContainer extends Component {
     const totalCons = allConWeights.reduce(this.getSum) / allWeights;
 
     return (
-      <CostBenefit pros={pros} cons={cons} pw={totalPros} cw={totalCons} />
+      <CostBenefit
+        pros={pros}
+        cons={cons}
+        pw={totalPros}
+        cw={totalCons}
+        toggleModal={show => this._showModal(show)}
+        modalShown={this.state.showModal}
+        modalToOpen={this.state.modalToOpen}
+        pickModal={modal => this.pickModal(modal)}
+      />
     );
   }
 }

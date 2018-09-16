@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flexDirection: 'row',
+    marginBottom: 20,
   },
   button: {
     marginHorizontal: 20,
@@ -19,6 +20,9 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     borderRadius: 50,
     borderWidth: 1,
+  },
+  buttonText: {
+    textAlign: 'center',
   },
   prosButton: {
     borderColor: 'green',
@@ -36,6 +40,51 @@ const styles = StyleSheet.create({
   },
   bar: {
     flexDirection: 'row',
+    marginVertical: 20,
+  },
+  modal: {
+    margin: 20,
+    paddingVertical: 40,
+
+    // flex: 1,
+    justifyContent: 'center',
+    // alignItems: 'center',
+
+    // height: height / 3,
+    marginHorizontal: 25,
+    backgroundColor: 'white',
+    shadowColor: 'black',
+    shadowOpacity: 0.5,
+    shadowRadius: 100,
+    shadowOffset: {
+      height: 20,
+      width: 20,
+    },
+    borderRadius: 7,
+    padding: 10,
+    position: 'relative',
+  },
+  fieldContainer: {
+    margin: 20,
+  },
+  field: {
+    borderBottomColor: 'pink',
+    borderBottomWidth: 1,
+  },
+  inactiveButton: {
+    borderColor: 'grey',
+  },
+  activeButton: {
+    borderColor: 'pink',
+  },
+  modalWrapper: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  close: {
+    position: 'absolute',
+    top: height * -0.05,
+    right: 0,
   },
 });
 
