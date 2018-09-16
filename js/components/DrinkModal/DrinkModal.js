@@ -2,10 +2,9 @@ import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { Mutation, Query } from 'react-apollo';
 import gql from 'graphql-tag';
-
+import styles from './styles'
+import Icon from "react-native-vector-icons/Ionicons";
 const DrinkModal = ({ dayId, navigation }) => {
-  console.log(dayId, 'btich');
-  //   console.log(handleClick, 'funcccc');
 
   const UPDATE_DAY = gql`
     mutation updateDay($id: ID!, $sober: Boolean) {
