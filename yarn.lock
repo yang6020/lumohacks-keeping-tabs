@@ -2237,6 +2237,10 @@ fill-range@^4.0.0:
     repeat-string "^1.6.1"
     to-regex-range "^2.1.0"
 
+final-form@^4.10.0:
+  version "4.10.0"
+  resolved "https://registry.yarnpkg.com/final-form/-/final-form-4.10.0.tgz#6179bca7676925202510e9877eb1ad2ad1cd3460"
+
 finalhandler@1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/finalhandler/-/finalhandler-1.1.0.tgz#ce0b6855b45853e791b2fcc680046d88253dd7f5"
@@ -4438,6 +4442,14 @@ rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-adopt@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/react-adopt/-/react-adopt-0.6.0.tgz#e5ff903a655d3082217f82bc9d5033a4b64fafad"
+  dependencies:
+    hoist-non-react-statics "^2.5.0"
+    react "^16.3.2"
+    react-display-name "^0.2.4"
+
 react-apollo@^2.1.11:
   version "2.1.11"
   resolved "https://registry.yarnpkg.com/react-apollo/-/react-apollo-2.1.11.tgz#ef4805f07af1d732ec94caebf7ba0728e2d162ca"
@@ -4462,6 +4474,10 @@ react-devtools-core@3.3.4:
   dependencies:
     shell-quote "^1.6.1"
     ws "^3.3.1"
+
+react-display-name@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/react-display-name/-/react-display-name-0.2.4.tgz#e2a670b81d79a2204335510c01246f4c92ff12cf"
 
 react-final-form@^3.6.5:
   version "3.6.5"
@@ -4676,6 +4692,15 @@ react@16.5.0:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
     schedule "^0.3.0"
+
+react@^16.3.2:
+  version "16.5.1"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.5.1.tgz#8cb8e9f8cdcb4bde41c9a138bfbf907e66132372"
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
+    schedule "^0.4.0"
 
 read-pkg-up@^1.0.1:
   version "1.0.1"
@@ -4976,6 +5001,12 @@ sax@~1.1.1:
 schedule@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/schedule/-/schedule-0.3.0.tgz#1be2ab2fc2e768536269ce7326efb478d6c045e8"
+  dependencies:
+    object-assign "^4.1.1"
+
+schedule@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/schedule/-/schedule-0.4.0.tgz#fa20cfd0bfbf91c47d02272fd7096780d3170bbb"
   dependencies:
     object-assign "^4.1.1"
 
