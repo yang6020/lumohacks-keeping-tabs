@@ -15,11 +15,9 @@ export const authStack = createStackNavigator(
   {
     AccountForm: {
       screen: AccountForm,
-    }
+    },
   },
-  {
-    headerMode: 'none',
-  }
+
 );
 const calendarStack = createStackNavigator({
   Calendar: {
@@ -67,7 +65,8 @@ export default createBottomTabNavigator(
       }
     }),
     tabBarOptions: {
-      showLabel: false,
+      activeTintColor: "#05AEF6",
+      inactiveTintColor: "#999999",
       style: {
         backgroundColor: 'white',
         borderTopColor: '#00ADCB',
