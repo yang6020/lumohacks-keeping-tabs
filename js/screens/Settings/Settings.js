@@ -12,6 +12,7 @@ const Settings = ({ navigation, text, changeTextHandler, sendEmail, submitSponso
                     style={styles.inputText}
                     onChangeText={(txt) => changeTextHandler(txt)}
                     value={text}
+                    placeholder={"Email"}
                 />
                 <TouchableOpacity
                     style={styles.submit}
