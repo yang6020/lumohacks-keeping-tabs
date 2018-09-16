@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import CostBenefit from './CostBenefit';
 import ProConContainer from './../../containers/ProConContainer.js';
 import { Text } from 'react-native';
+import LoadingIndicator from '../../components/LoadingIndicator';
 
 export default class CostBenefitContainer extends Component {
   constructor(props) {
@@ -35,7 +36,7 @@ export default class CostBenefitContainer extends Component {
     return (
       <ProConContainer>
         {({ addPros, addCons, getPros, getCons, loading, error }) => {
-          if (getPros.loading || getCons.loading) return <Text>Loading</Text>;
+          if (getPros.loading || getCons.loading) return <LoadingIndicator />
           if (error) return <Text>Error</Text>;
           pros = getPros.data.allPros;
           cons = getCons.data.allCons;

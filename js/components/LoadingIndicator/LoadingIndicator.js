@@ -1,8 +1,10 @@
 import React from 'react';
-import { ActivityIndicator } from 'react-native';
+import { ActivityIndicator, View } from 'react-native';
 
 const LoadingIndicator = () => (
-  <ActivityIndicator size="large" color={"#05AEF6"} />
+  <View style={{ flex: 1, backgroundColor: 'white', justifyContent: 'center', alignItems: 'center' }}>
+    <ActivityIndicator size="large" color={"#05AEF6"} />
+  </View>
 );
 
 export default LoadingIndicator;
