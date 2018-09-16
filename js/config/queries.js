@@ -17,3 +17,41 @@ export const AUTH_USER = gql`
   }
 `;
 
+export const ADD_PROS = gql`
+  mutation createPro($title: String!, $weight: Int!) {
+    createPro(title: $title, weight: $weight) {
+      id
+      title
+      weight
+    }
+  }
+`;
+
+export const ADD_CONS = gql`
+  mutation createCon($title: String!, $weight: Int!) {
+    createCon(title: $title, weight: $weight) {
+      id
+      title
+      weight
+    }
+  }
+`;
+
+export const GET_PROS = gql`
+  {
+    allPros {
+      id
+      title
+      weight
+    }
+  }
+`;
+export const GET_CONS = gql`
+  {
+    allCons {
+      id
+      title
+      weight
+    }
+  }
+`;

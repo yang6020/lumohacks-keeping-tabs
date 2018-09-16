@@ -23,7 +23,7 @@ const CostBenefit = ({
   modalToOpen,
   pickModal,
 }) => {
-  // console.log(showModal, modalShown);
+  console.log(pros, cons, 'cost benefit ');
 
   validate = values => {
     const errors = {};
@@ -110,10 +110,18 @@ const CostBenefit = ({
 
       <View style={styles.bar}>
         <View
-          style={{ backgroundColor: 'green', width: width * pw, height: height / 15, }}
+          style={{
+            backgroundColor: 'green',
+            width: width * pw,
+            height: height / 15,
+          }}
         />
         <View
-          style={{ backgroundColor: 'red', width: width * cw, height: height / 15 }}
+          style={{
+            backgroundColor: 'red',
+            width: width * cw,
+            height: height / 15,
+          }}
         />
       </View>
       <View style={styles.buttonContainer}>
