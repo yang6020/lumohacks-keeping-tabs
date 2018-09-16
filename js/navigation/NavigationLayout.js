@@ -17,6 +17,9 @@ export const authStack = createStackNavigator(
       screen: AccountForm,
     },
   },
+  {
+    headerMode: 'none',
+  }
 
 );
 const calendarStack = createStackNavigator({
