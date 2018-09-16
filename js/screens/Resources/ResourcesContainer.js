@@ -4,20 +4,20 @@ import Resources from './Resources';
 const dummy = [
   {
     url:"https://google.ca",
-    imageUrl: "https://www.google.ca/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+    imageurl: "https://www.google.ca/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
     title: "Google",
     description: "lorem ipsum muh fucka"
   },
   {
     url: "https://github.com",
-    imageUrl: "https://assets-cdn.github.com/images/modules/open_graph/github-octocat.png",
+    imageurl: "https://assets-cdn.github.com/images/modules/open_graph/github-octocat.png",
     title: "Github",
     description: "this is github dawg"
   },
   {
     url: "ASS",
     title: "ass",
-    imageUrl: "https://cdn3.vectorstock.com/i/1000x1000/56/67/different-bum-sizes-icons-large-flat-big-smal-vector-17125667.jpg",
+    imageurl: "https://cdn3.vectorstock.com/i/1000x1000/56/67/different-bum-sizes-icons-large-flat-big-smal-vector-17125667.jpg",
     description: "asswipe"
   }
 ]

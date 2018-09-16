@@ -25,7 +25,7 @@ const Resources = ({ navigation, links }) => {
             <Card
               key={link.title}
               title={link.title}
-              image={{uri:link.imageUrl}}
+              image={{uri:link.imageurl}}
               containerStyle={styles.card}
               >
               <Text style={{marginBottom: 10}}>
