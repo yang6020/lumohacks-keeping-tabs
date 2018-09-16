@@ -6,6 +6,6 @@ export default class SettingsContainer extends Component {
     title: 'Settings',
   };
   render() {
-    return <Settings />;
+    return <Settings navigation={this.props.navigation} />;
   }
 }
