@@ -1,21 +1,44 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+const { height, width } = Dimensions.get('window')
 
 const styles = StyleSheet.create({
-  input: {
-    width: 200,
-    borderBottomWidth: 2,
-    paddingHorizontal: 2,
-    paddingVertical: 1,
-    fontSize: 16,
-    marginTop: 8,
-    marginBottom: 20,
+  container: {
+    backgroundColor: 'white',
+    height: height,
+    width: width,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1
   },
-  valid: {
-    borderBottomColor: "#05AEF6",
-    color: "black",
+  question: {
+    fontSize: 30,
+    color: 'blue'
   },
-  invalid: {
-    borderBottomColor: "red",
+  buttonContainer: {
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+    height: height / 8,
+  },
+  buttonYes: {
+    marginTop: 20,
+    width: width / 3,
+    borderRadius: 7,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: "yellow",
+    margin: 10
+
+  },
+  buttonNo: {
+    marginTop: 20,
+    paddingVertical: 5,
+    width: width / 3,
+    borderRadius: 7,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: "green",
+    margin: 10
+
   },
 });
 

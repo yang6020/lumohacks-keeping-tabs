@@ -13,6 +13,7 @@ import Resources from '../screens/Resources'
 import DrinkModal from '../components/DrinkModal'
 
 
+
 export const authStack = createStackNavigator(
   {
     AccountForm: {

@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import styles from './styles';
 import DrinkModal from './DrinkModal'
-import {Mutation} from 'react-apollo'
+import { Mutation } from 'react-apollo'
 
-class DrinkModalContainer extends Component{
-  render(){
+class DrinkModalContainer extends Component {
+  render() {
     const { navigation } = this.props;
     const dayDate = navigation.getParam("dayDate");
     const dayId = navigation.getParam("dayId");
@@ -17,12 +17,10 @@ class DrinkModalContainer extends Component{
     }
 
     return (
-      <View>
-       <DrinkModal/>
-      </View>
+      <DrinkModal />
     )
   }
-  
+
 }
 
 export default DrinkModalContainer
