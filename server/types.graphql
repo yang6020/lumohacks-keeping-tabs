@@ -18,3 +18,11 @@ type Resource @model{
   title: String!
   url: String!
 }
+
+type Day @model{
+  id: ID! @isUnique
+  sober: Boolean @defaultValue(value: "true")
+  createdAt: DateTime! # read-only (managed by Graphcool)
+  updatedAt: DateTime! # read-only (managed by Graphcool)
+}
+
