@@ -32,10 +32,7 @@ const calendarStack = createStackNavigator({
     screen: DrinkModal
   }
 },
-{
-  mode: "modal",
-  headerMode: "none"
-}
+
 
 );
 const costBenefitStack = createStackNavigator({
