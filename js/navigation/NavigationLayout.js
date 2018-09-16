@@ -10,6 +10,7 @@ import Calendar from '../screens/Calendar'
 import CostBenefit from '../screens/CostBenefit'
 import Settings from '../screens/Settings'
 import Resources from '../screens/Resources'
+import Communities from '../screens/Communities'
 import DrinkModal from '../components/DrinkModal'
 
 
@@ -48,12 +49,18 @@ const resourcesStack = createStackNavigator({
     screen: Resources,
   },
 });
+const communitiesStack = createStackNavigator({
+  Communities: {
+    screen: Communities,
+  },
+});
 
 export default createBottomTabNavigator(
   {
     Calendar: calendarStack,
     CostBenefit: costBenefitStack,
     Resources: resourcesStack,
+    Communities: communitiesStack,
     Settings: settingsStack,
   },
   {
@@ -69,6 +76,8 @@ export default createBottomTabNavigator(
           iconName = `ios-book`;
         } else if (routeName === "Settings") {
           iconName = `ios-cog`;
+        } else if (routeName === "Communities") {
+          iconName = `logo-reddit`;
         }
         return <Icon name={iconName} size={25} color={tintColor} />;
       }
