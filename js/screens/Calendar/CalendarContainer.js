@@ -23,6 +23,7 @@ export default class CalendarContainer extends Component {
     };
 
     handleDayPress = (day) => {
+        navigation.navigate("MyModal", { dayDate: "MY date" })
         console.log("selected day", day);
     };
 
