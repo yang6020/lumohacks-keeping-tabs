@@ -5,10 +5,12 @@ import DrinkModal from './DrinkModal'
 import { Mutation } from 'react-apollo'
 
 class DrinkModalContainer extends Component {
+  constructor(props) {
+    super(props)
+  }
   render() {
-    const { navigation } = this.props;
-    const dayDate = navigation.getParam("dayDate");
-    const dayId = navigation.getParam("dayId");
+    const dayDate = this.props.navigation.getParam("dayDate");
+    const dayId = this.props.navigation.getParam("dayId");
     console.log(dayDate)
     // console.log(dayId)
 
@@ -17,7 +19,7 @@ class DrinkModalContainer extends Component {
     }
 
     return (
-      <DrinkModal />
+      <DrinkModal navigation={this.props.navigation} />
     )
   }
 
