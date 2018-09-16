@@ -3,7 +3,7 @@ const { height, width } = Dimensions.get('window')
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white',
+    backgroundColor: '#0082B5',
     height: height,
     width: width,
     alignItems: 'center',
