@@ -13,6 +13,17 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     paddingBottom: 20
   },
+  mentor: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: "black",
+    paddingBottom: 10,
+  },
+  mentorContainer: {
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+    justifyContent: 'center'
+  },
   buttonContainer: {
     flexWrap: 'wrap',
     flexDirection: 'row',

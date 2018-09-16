@@ -8,12 +8,15 @@ const Settings = ({ navigation, text, changeTextHandler, sendEmail, submitSponso
     return (
         <View style={styles.container}>
             <View style={styles.submitContainer}>
-                <TextInput
-                    style={styles.inputText}
-                    onChangeText={(txt) => changeTextHandler(txt)}
-                    value={text}
-                    placeholder={"Email"}
-                />
+                <View style={styles.mentorContainer}>
+                    <Text style={styles.mentor}>Choose your mentor :</Text>
+                    <TextInput
+                        style={styles.inputText}
+                        onChangeText={(txt) => changeTextHandler(txt)}
+                        value={text}
+                        placeholder={"Email"}
+                    />
+                </View>
                 <TouchableOpacity
                     style={styles.submit}
                     onPress={submitSponsor}
