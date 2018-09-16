@@ -12,7 +12,12 @@ export default class CalendarContainer extends Component {
     formatDates = (data) => {
         const dayMap = {};
         data.allDays.map(day => {
-            dayMap[day.date] = {color:'green'};
+
+            if (day.sober) {
+                dayMap[day.date] = {color:'green'};
+            } else {
+                dayMap[day.date] = {color:'yellow'};
+            }
         });
         return dayMap;
     };
