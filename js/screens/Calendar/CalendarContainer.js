@@ -50,14 +50,12 @@ export default class CalendarContainer extends Component {
             dayDate: day.dateString,
             dayId: day.id,
         });
-        console.log('selected day', day);
     };
 
     findConsecutiveDays = (arr) => {
         let start = arr[0];
         let stop = start;
         let arrLength = arr.length;
-        let result = '';
 
         for (let i = 1; i < arrLength; i++) {
 
@@ -66,11 +64,9 @@ export default class CalendarContainer extends Component {
             } else {
 
                 if (start.dayOfYear === stop.dayOfYear) {
-                    result += start.dayOfYear + ', ';
                     start.startingDay = true;
                     start.endingDay = true;
                 } else {
-                    result += start.dayOfYear + '-' + stop.dayOfYear + ', ';
                     start.startingDay = true;
                     stop.endingDay = true;
                 }
@@ -81,16 +77,12 @@ export default class CalendarContainer extends Component {
         }
 
         if (start.dayOfYear === stop.dayOfYear) {
-            result += start.dayOfYear;
             start.startingDay = true;
             start.endingDay = true;
         } else {
-            result += start.dayOfYear + '-' + stop.dayOfYear;
             start.startingDay = true;
             stop.endingDay = true;
         }
-
-        console.log(result);
 
         return arr;
 
@@ -129,9 +121,10 @@ export default class CalendarContainer extends Component {
                     }
                 `}
             >
-                {({loading, error, data}) => {
-                    if (loading) return <View
-                        style={{flex: 1, backgroundColor: 'white', justifyContent: 'center'}}><LoadingIndicator/></View>
+                {({ loading, error, data }) => {
+                    console.log(data)
+                    data= data
+                    if (loading) return <View style={{ flex: 1, backgroundColor: 'white', justifyContent: 'center' }}><LoadingIndicator /></View>
                     if (error) return <Text>Error: </Text>;
                     return <Calendar days={this.formatDates(data)} onDayPress={this.handleDayPress}/>;
                 }}
