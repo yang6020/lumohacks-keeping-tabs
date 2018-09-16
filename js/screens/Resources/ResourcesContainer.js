@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Resources from './Resources';
+import { GOOGLE_SEARCH_KEY, GOOGLE_SEARCH_ENGINE } from 'react-native-dotenv';
 
 export default class ResourcesContainer extends Component {
   static navigationOptions = {
@@ -11,10 +12,6 @@ export default class ResourcesContainer extends Component {
   }
   
   fetchData = (searchTerm) => {
-    //TODO: put this vars in a config file
-    let GOOGLE_SEARCH_KEY='AIzaSyCNEAFL_8DTUaEk2FwhiI3xOJz4xl3_QlU'
-    let GOOGLE_SEARCH_ENGINE='000456785991468921886:zdbnnimdfaw'
-    
     fetch('https://www.googleapis.com/customsearch/v1?key='+GOOGLE_SEARCH_KEY+'&cx='+GOOGLE_SEARCH_ENGINE+'&q='+searchTerm)
     .then((response) => response.json())
     .then((responseJson) => {

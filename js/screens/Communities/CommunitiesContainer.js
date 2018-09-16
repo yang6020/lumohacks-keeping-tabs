@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Communities from './Communities';
+import { REDDIT_URL } from 'react-native-dotenv'
 
 export default class CommunitiesContainer extends Component {
   static navigationOptions = {
@@ -11,16 +12,16 @@ export default class CommunitiesContainer extends Component {
   }
   
   componentWillMount() {
-    this.fetchReddit('https://www.reddit.com/r/alcoholism/hot/');
-    this.fetchReddit('https://www.reddit.com/r/stopdrinking/hot/');
-    this.fetchReddit('https://www.reddit.com/r/cripplingalcoholism/hot/');
-    this.fetchReddit('https://www.reddit.com/r/alcoholicsanonymous/hot/');
-    this.fetchReddit('https://www.reddit.com/r/AlAnon/hot/');
-    this.fetchReddit('https://www.reddit.com/r/SMARTRecovery/hot/');
+    this.fetchReddit('/r/alcoholism/hot/');
+    this.fetchReddit('/r/stopdrinking/hot/');
+    this.fetchReddit('/r/cripplingalcoholism/hot/');
+    this.fetchReddit('/r/alcoholicsanonymous/hot/');
+    this.fetchReddit('/r/AlAnon/hot/');
+    this.fetchReddit('/r/SMARTRecovery/hot/');
   } 
   
   fetchReddit = (thread) => {
-    fetch(thread+'.json?limit=5')
+    fetch(REDDIT_URL + thread +'.json?limit=5')
     .then((response) => response.json())
     .then((responseJson) => {
       let currentLinks = this.state.links;
@@ -28,7 +29,7 @@ export default class CommunitiesContainer extends Component {
       let item = children.find(child => !child.data.stickied);
       let link = {
         url: thread,
-        subreddit: '/r/'+item.data.subreddit,
+        subreddit: thread.substring(0,thread.length-4),
         title: item.data.title,
         imageurl: item.data.thumbnail === "self" || !item.data.thumbnail ? 'http://1000logos.net/wp-content/uploads/2017/05/Reddit-logo.png' : item.data.thumbnail,
         description: item.data.selftext.length > 400 ? item.data.selftext.substring(0,399)+'...' : item.data.selftext

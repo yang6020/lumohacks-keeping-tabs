@@ -4,6 +4,7 @@ import { Alert, Linking, Text, View } from "react-native";
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 import LoadingIndicator from "../../components/LoadingIndicator";
+import { SENDGRID_API_KEY } from 'react-native-dotenv';
 
 export default class SettingsContainer extends Component {
     static navigationOptions = {
@@ -25,11 +26,10 @@ export default class SettingsContainer extends Component {
             "subject": "Monthly Report for " + userName,
             "content": [{ "type": "text/plain", "value": "and easy to do anywhere, even with cURL" }]
         };
-        const apikey = "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";
         fetch('https://api.sendgrid.com/v3/mail/send', {
             method: 'POST',
             headers: {
-                'Authorization': 'Bearer ' + apikey,
+                'Authorization': 'Bearer ' + SENDGRID_API_KEY,
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(body),
