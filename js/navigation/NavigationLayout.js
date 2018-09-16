@@ -11,7 +11,7 @@ import CostBenefit from '../screens/CostBenefit'
 import Settings from '../screens/Settings'
 import Resources from '../screens/Resources'
 import DrinkModal from '../components/DrinkModal'
-  import DrinkModal from '../components/DrinkModal';
+
 
 export const authStack = createStackNavigator(
   {

@@ -1,3 +1,3 @@
-import { DrinkModal } from './DrinkModals';
+import  DrinkModalContainer  from './DrinkModalContainer';
 
-export default DrinkModal;
+export default DrinkModalContainer;

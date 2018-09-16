@@ -1,16 +1,27 @@
-import React from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
-import styles from './styles';
+import React from 'react'
+import {View, Text, TouchableOpacity} from 'react-native'
 
-export const DrinkModal =() => {
-  return (
+const DrinkModal = ()=> {
+    return(
+<View>
     <View>
-      <Text> I am modal</Text>
+        <Text> Go Back </Text>    
     </View>
-  )
+
+    <View>
+    <Text>Did you Drink today?</Text>
+
+    <TouchableOpacity>
+    <Text>Yes</Text>
+    </TouchableOpacity>
+
+    <TouchableOpacity>
+    <Text>No</Text>
+    </TouchableOpacity>
+    </View>
+</View>
+
+    )
 }
 
-
-
-
-
+export default DrinkModal

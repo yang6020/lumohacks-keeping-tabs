@@ -5,9 +5,9 @@ import { Query } from 'react-apollo';
 import { Text, View } from 'react-native';
 import LoadingIndicator from '../../components/LoadingIndicator'
 export default class CalendarContainer extends Component {
-    static navigationOptions = {
-        title: 'Calendar',
-    };
+  static navigationOptions = {
+    title: 'Calendar',
+  };
 
     formatDates = (data) => {
         const dayMap = {};
@@ -22,10 +22,13 @@ export default class CalendarContainer extends Component {
         return dayMap;
     };
 
-    handleDayPress = (day) => {
-        navigation.navigate("MyModal", { dayDate: "MY date" })
-        console.log("selected day", day);
-    };
+  handleDayPress = day => {
+    this.props.navigation.navigate('MyModal', {
+      dayDate: day.dateString,
+      dayId: day.id,
+    });
+    console.log('selected day', day);
+  };
 
     render() {
         return (
