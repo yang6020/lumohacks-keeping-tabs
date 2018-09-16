@@ -3,14 +3,23 @@ const { height, width } = Dimensions.get('window')
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#0082B5',
+    backgroundColor: "#0082B5",
+    paddingRight: 15,
+    paddingLeft: 15,
     height: height,
-    width: width,
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1
+  },
+  header: {
+    paddingVertical: 10,
+    color: "white",
+    marginTop: 20
+
+  },
+  questionContainer: {
+    marginTop: 30,
+    alignItems: 'center'
   },
   question: {
+    marginTop: 30,
     fontSize: 30,
     color: 'white'
   },

@@ -29,11 +29,8 @@ const calendarStack = createStackNavigator({
   Calendar: {
     screen: Calendar,
   },
-  MyModal: {
-    screen: DrinkModal
-  }
-},
 
+},
 
 );
 const costBenefitStack = createStackNavigator({
