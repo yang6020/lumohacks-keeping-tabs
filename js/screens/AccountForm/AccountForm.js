@@ -1,11 +1,11 @@
 import React from 'react';
 import { Text, View, } from 'react-native';
 import styles from './styles';
-const CostBenefit = ({ navigation }) => {
+const AccountForm = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Text>CostBenefit</Text>
+      <Text>AccountForm</Text>
     </View>
   );
 };
-export default CostBenefit;
+export default AccountForm;
