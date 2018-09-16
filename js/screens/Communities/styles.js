@@ -10,9 +10,6 @@ const styles = StyleSheet.create({
   card: {
     width: '100%'
   },
-  cardImage: {
-    
-  },
   button: {
     borderRadius: 0,
     marginLeft: 0,
@@ -21,6 +18,10 @@ const styles = StyleSheet.create({
   },
   text: {
     marginBottom:10,
+  },
+  subreddit: {
+    fontWeight: 'bold',
+    marginBottom:5
   }
 });
 
