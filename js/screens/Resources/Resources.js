@@ -23,7 +23,7 @@ const Resources = ({ navigation, links }) => {
         links.map(
           link => (
             <Card
-              key={link.title}
+              key={link.url}
               title={link.title}
               image={{uri:link.imageurl}}
               containerStyle={styles.card}
