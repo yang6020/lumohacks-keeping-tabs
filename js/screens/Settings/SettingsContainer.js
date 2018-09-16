@@ -18,8 +18,9 @@ export default class SettingsContainer extends Component {
     sendEmail = () => {
         // TODO: fetch user name here and sponsor email
         const userName = "Barack Obama";
+        const email = "keepingtabs@mailinator.com";
         const body = {
-            "personalizations": [{ "to": [{ "email": "v.chan36@gmail.com" }] }],
+            "personalizations": [{ "to": [{ "email": email }] }],
             "from": { "email": "noreply@keepintabs.com" },
             "subject": "Monthly Report for " + userName,
             "content": [{ "type": "text/plain", "value": "and easy to do anywhere, even with cURL" }]
@@ -33,12 +34,34 @@ export default class SettingsContainer extends Component {
             },
             body: JSON.stringify(body),
         }).then((response) => {
-            console.log("##### SENDGRID", response);
+            Alert.alert(
+                'Sent!',
+                'Your sponsor will help you look at your results!',
+                [{text:'Ok', onPress: () => console.log('Ok pressed')}]
+            );
+        }).catch(err => {
+            Alert.alert(
+                'Failed to send email',
+                'Unable to send to ' + email + '. Please try again later.',
+                [{text:'Ok', onPress: () => console.log('Ok pressed')}]
+            );
         });
     };
 
     submitSponsor = () => {
         // send in this.state.text (do email validation here first)
+        if (this.validateEmail(this.state.text)) {
+            console.log("validated");
+            // submit email to backend
+        } else {
+            console.log("invalid email");
+            // alert invalid email format
+        }
+    };
+
+    validateEmail = (email) => {
+        let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
     };
 
     changeTextHandler = (text) => {
