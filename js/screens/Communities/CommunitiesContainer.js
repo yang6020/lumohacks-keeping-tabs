@@ -26,8 +26,6 @@ export default class CommunitiesContainer extends Component {
       let currentLinks = this.state.links;
       let children = responseJson.data.children;
       let item = children.find(child => !child.data.stickied);
-      // let item = responseJson.data.children[1].data;
-      console.log(item);
       let link = {
         url: thread,
         subreddit: '/r/'+item.data.subreddit,
