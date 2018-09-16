@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   },
   question: {
     fontSize: 30,
-    color: 'blue'
+    color: 'white'
   },
   buttonContainer: {
     flexWrap: 'wrap',
