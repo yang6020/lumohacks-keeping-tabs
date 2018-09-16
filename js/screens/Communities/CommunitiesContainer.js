@@ -14,21 +14,26 @@ export default class CommunitiesContainer extends Component {
     this.fetchReddit('https://www.reddit.com/r/alcoholism/hot/');
     this.fetchReddit('https://www.reddit.com/r/stopdrinking/hot/');
     this.fetchReddit('https://www.reddit.com/r/cripplingalcoholism/hot/');
-    this.fetchReddit('https://www.reddit.com/r/alcohol/hot/');
+    this.fetchReddit('https://www.reddit.com/r/alcoholicsanonymous/hot/');
+    this.fetchReddit('https://www.reddit.com/r/AlAnon/hot/');
+    this.fetchReddit('https://www.reddit.com/r/SMARTRecovery/hot/');
   } 
   
   fetchReddit = (thread) => {
-    fetch(thread+'.json?limit=2')
+    fetch(thread+'.json?limit=5')
     .then((response) => response.json())
     .then((responseJson) => {
       let currentLinks = this.state.links;
-      let item = responseJson.data.children[1].data;
-      console.log(item.thumbnail);
+      let children = responseJson.data.children;
+      let item = children.find(child => !child.data.stickied);
+      // let item = responseJson.data.children[1].data;
+      console.log(item);
       let link = {
         url: thread,
-        title: item.title,
-        imageurl: item.thumbnail === "self" || !item.thumbnail ? 'http://1000logos.net/wp-content/uploads/2017/05/Reddit-logo.png' : item.thumbnail,
-        description: item.selftext.length > 400 ? item.selftext.substring(0,399)+'...' : item.selftext
+        subreddit: '/r/'+item.data.subreddit,
+        title: item.data.title,
+        imageurl: item.data.thumbnail === "self" || !item.data.thumbnail ? 'http://1000logos.net/wp-content/uploads/2017/05/Reddit-logo.png' : item.data.thumbnail,
+        description: item.data.selftext.length > 400 ? item.data.selftext.substring(0,399)+'...' : item.data.selftext
       };
       currentLinks.push(link);
       this.setState({links:currentLinks});
