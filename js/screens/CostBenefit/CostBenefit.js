@@ -168,19 +168,27 @@ const CostBenefit = ({
       </View>
       <View style={styles.listContainer}>
         <Text style={styles.header}>Pros for Not Drinking</Text>
-        <ScrollView>
-          {pros.map(pro => (
-            <Text key={pro.id}>{`\u2022 ${pro.title}`}</Text>
-          ))}
-        </ScrollView>
+        {pros ? (
+          <ScrollView>
+            {pros.map(pro => (
+              <Text key={pro.id}>{`\u2022 ${pro.title}`}</Text>
+            ))}
+          </ScrollView>
+        ) : (
+          <Text>Add some pros to your costbenefit analysis</Text>
+        )}
       </View>
       <View style={styles.listContainer}>
         <Text style={styles.header}>Cons for Not Drinking</Text>
-        <ScrollView>
-          {cons.map(con => (
-            <Text key={con.id}>{`\u2022 ${con.title}`}</Text>
-          ))}
-        </ScrollView>
+        {cons ? (
+          <ScrollView>
+            {cons.map(con => (
+              <Text key={con.id}>{`\u2022 ${con.title}`}</Text>
+            ))}
+          </ScrollView>
+        ) : (
+          <Text>Add some cons to your costbenefit analysis</Text>
+        )}
       </View>
     </View>
   );
