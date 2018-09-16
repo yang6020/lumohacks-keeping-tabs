@@ -10,6 +10,8 @@ import Calendar from '../screens/Calendar'
 import CostBenefit from '../screens/CostBenefit'
 import Settings from '../screens/Settings'
 import Resources from '../screens/Resources'
+import DrinkModal from '../components/DrinkModal'
+  import DrinkModal from '../components/DrinkModal';
 
 export const authStack = createStackNavigator(
   {
@@ -26,7 +28,16 @@ const calendarStack = createStackNavigator({
   Calendar: {
     screen: Calendar,
   },
-});
+  MyModal: {
+    screen: DrinkModal
+  }
+},
+{
+  mode: "modal",
+  headerMode: "none"
+}
+
+);
 const costBenefitStack = createStackNavigator({
   CostBenefit: {
     screen: CostBenefit,
