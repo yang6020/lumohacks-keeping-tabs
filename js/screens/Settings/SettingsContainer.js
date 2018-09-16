@@ -34,11 +34,19 @@ export default class SettingsContainer extends Component {
             },
             body: JSON.stringify(body),
         }).then((response) => {
-            Alert.alert(
-                'Sent!',
-                'Your sponsor will help you look at your results!',
-                [{text:'Ok', onPress: () => console.log('Ok pressed')}]
-            );
+            if (response.status === 202) {
+              Alert.alert(
+                  'Sent!',
+                  'Your sponsor will help you look at your results!',
+                  [{text:'Ok', onPress: () => console.log('Ok pressed')}]
+              );
+            } else {
+              Alert.alert(
+                  'Failed to send email',
+                  'Unable to send to ' + email + '. Please try again later.',
+                  [{text:'Ok', onPress: () => console.log('Ok pressed')}]
+              );
+            }
         }).catch(err => {
             Alert.alert(
                 'Failed to send email',
