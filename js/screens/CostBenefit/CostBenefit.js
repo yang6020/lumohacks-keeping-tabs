@@ -22,17 +22,17 @@ const CostBenefit = ({
   modalShown,
   modalToOpen,
   pickModal,
+  addPro,
+  addCon,
 }) => {
-  console.log(pros, cons, 'cost benefit ');
-
   validate = values => {
     const errors = {};
     if (!values.title) {
       errors.title = 'Required';
     }
-    // if (!values.password) {
-    //   errors.password = 'Required';
-    // }
+    if (!values.weight) {
+      errors.weight = 'Required';
+    }
     return errors;
   };
 
@@ -55,8 +55,30 @@ const CostBenefit = ({
                 : 'Add Cons for Not Drinking'}
             </Text>
             <Form
-              onSubmit={() => console.log(values)}
-              render={({ handleSubmit, pristine, invalid }) => (
+              onSubmit={values => {
+                modalToOpen === 'Pros'
+                  ? addPro
+                      .mutation({
+                        variables: {
+                          title: values.title,
+                          weight: parseInt(values.weight),
+                        },
+                      })
+                      .then(() => {
+                        toggleModal(false);
+                      })
+                  : addCon
+                      .mutation({
+                        variables: {
+                          title: values.title,
+                          weight: parseInt(values.weight),
+                        },
+                      })
+                      .then(() => {
+                        toggleModal(false);
+                      });
+              }}
+              render={({ handleSubmit, pristine, invalid, form }) => (
                 <View>
                   <Field name="title" validate={required}>
                     {({ input, meta }) => (
