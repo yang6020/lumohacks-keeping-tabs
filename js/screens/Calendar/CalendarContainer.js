@@ -12,16 +12,12 @@ export default class CalendarContainer extends Component {
     formatDates = (data) => {
         const dayMap = {};
         data.allDays.map(day => {
-<<<<<<< HEAD
 
             if (day.sober) {
-                dayMap[day.date] = {color:'green'};
+                dayMap[day.date] = { color: 'green' };
             } else {
-                dayMap[day.date] = {color:'yellow'};
+                dayMap[day.date] = { color: 'yellow' };
             }
-=======
-            dayMap[day.date] = { color: 'green' };
->>>>>>> add loading indicator
         });
         return dayMap;
     };
