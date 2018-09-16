@@ -30,7 +30,6 @@ const calendarStack = createStackNavigator({
   Calendar: {
     screen: Calendar,
   },
-
 },
 
 );

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
-import styles from './styles';
+import { Text, View } from 'react-native';
 import DrinkModal from './DrinkModal';
 import { Mutation, Query } from 'react-apollo';
 import gql from 'graphql-tag';
+import LoadingIndicator from '../../components/LoadingIndicator';
 
 class DrinkModalContainer extends Component {
   render() {
@@ -29,13 +29,13 @@ class DrinkModalContainer extends Component {
               /* console.log('bob',data) */
             }
 
-            if (loading) return <Text>Loading: </Text>;
+            if (loading) return <LoadingIndicator />
             if (error) return <Text>Error: </Text>;
 
             dayId = data.Day.id;
             console.log(dayId);
 
-            return <DrinkModal dayId={dayId} navigation={this.props.navigation}/>;
+            return <DrinkModal dayId={dayId} navigation={this.props.navigation} />;
           }}
         </Query>
       </View>
