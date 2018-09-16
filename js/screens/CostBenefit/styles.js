@@ -12,13 +12,14 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flexDirection: 'row',
+    marginBottom: 10
   },
   button: {
     marginHorizontal: 20,
     paddingHorizontal: 20,
     paddingVertical: 5,
     borderRadius: 50,
-    borderWidth: 1,
+    borderWidth: 1.5,
   },
   prosButton: {
     borderColor: 'green',
@@ -36,6 +37,7 @@ const styles = StyleSheet.create({
   },
   bar: {
     flexDirection: 'row',
+    marginBottom: 10
   },
 });
 
