@@ -7,8 +7,16 @@
     "test": "jest"
   },
   "dependencies": {
+    "apollo-boost": "^0.1.16",
+    "graphql": "^14.0.2",
+    "graphql-tag": "^2.9.2",
     "react": "16.5.0",
-    "react-native": "0.57.0"
+    "react-apollo": "^2.1.11",
+    "react-final-form": "^3.6.5",
+    "react-native": "0.57.0",
+    "react-native-modal": "^6.5.0",
+    "react-native-splash-screen": "^3.1.1",
+    "realm": "^2.15.3"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",
